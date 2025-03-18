@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Jost, Caveat } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+import Footer from "@/components/views/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const jost = Jost({
   subsets: ["latin"],
+  variable: "--font-jost-sans",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const caveat = Caveat({
   subsets: ["latin"],
+  variable: "--font-caveat-sans",
 });
 
 export const metadata: Metadata = {
@@ -23,11 +25,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      <body className={` ${caveat.variable} ${jost.variable} antialiased`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+          <Footer />
+
+        </ThemeProvider>
       </body>
     </html>
   );
