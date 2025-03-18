@@ -125,7 +125,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply min-h-[400px] bg-primary/80 rounded-full;
+  @apply min-h-[400px] bg-cyan rounded-full;
 }
 
 ::-webkit-scrollbar-track {
