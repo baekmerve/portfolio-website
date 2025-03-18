@@ -14,17 +14,15 @@ const fadeInLeft = {
   visible: { opacity: 1, x: 0 },
 };
 
-
-
 const Hero = ({ setSelectedPage }: Props) => {
-  //lg:iems-center
+
   return (
     <section
       id="hero"
       className="flex flex-col lg:flex-row lg:justify-between lg:h-[100vh] pt-20 lg:pt-40 gap-20"
     >
       {/* IMAGE SECTION */}
-      <div className="md:order-2 mt-20 lg:mt-32 flex justify-center basis-2/5 z-10 ">
+      <div className="md:order-2 flex justify-center basis-2/5 z-10 ">
         <Image
           alt="Profile image of Merve Baek, a frontend developer"
           src="/images/profile-image.jpeg"
