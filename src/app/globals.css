@@ -132,11 +132,10 @@
   @apply bg-primary/10 rounded-full;
 }
 
-
-
 /* colorChange animation */
 @keyframes colorChange {
-  0%, 100% {
+  0%,
+  100% {
     background: #ff7eb3; /* Pink */
     box-shadow: -15px 10px 20px rgba(255, 126, 179, 0.6);
     transform: translate(0, 0);

@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Navbar selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
-      <Landing setSelectedPage={setSelectedPage} />
+      <Landing selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
     </>
   );
 }
