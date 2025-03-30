@@ -25,48 +25,48 @@ const MobileNavbar = ({ selectedPage, setSelectedPage }: Props) => {
   const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
 
   return (
-    <div className=" md:hidden">
+    <div className=' md:hidden'>
       <Sheet open={showMobileMenu} onOpenChange={setShowMobileMenu}>
         <SheetTrigger asChild>
           <Button
-            aria-label="menu Button"
-            variant="ghost"
-            size="icon"
-            className="cursor-pointer"
+            aria-label='menu Button'
+            variant='ghost'
+            size='icon'
+            className='cursor-pointer'
           >
-            <MenuIcon className="size-7 text-brown dark:text-cyan " />
+            <MenuIcon className='size-7 text-brown dark:text-cyan ' />
           </Button>
         </SheetTrigger>
         <SheetContent
-          side="right"
-          className="w-[300px] backdrop-blur-sm bg-background/90 flex items-center"
+          side='right'
+          className='w-[300px] backdrop-blur-sm bg-background/90 flex items-center'
         >
-          <SheetHeader className="mt-20">
+          <SheetHeader className='mt-20'>
             <SheetTitle>
-              <AnchorLink href="#hero" onClick={() => setSelectedPage("hero")}>
+              <AnchorLink href='#home' onClick={() => setSelectedPage('home')}>
                 <LogoImage />
               </AnchorLink>
             </SheetTitle>
           </SheetHeader>
-          <nav className=" flex flex-col justify-center gap-5 text-lg font-semibold mt-20">
+          <nav className=' flex flex-col justify-center gap-5 text-lg font-semibold mt-20'>
             <NavLink
-              page="Hero"
+              page='Home'
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
             <NavLink
-              page="Resume"
+              page='Resume'
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
             <NavLink
-              page="Projects"
+              page='Projects'
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
 
             <NavLink
-              page="Contact"
+              page='Contact'
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
@@ -74,7 +74,7 @@ const MobileNavbar = ({ selectedPage, setSelectedPage }: Props) => {
         </SheetContent>
       </Sheet>
     </div>
-  );
+  )
 };
 
 export default MobileNavbar;

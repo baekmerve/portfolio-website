@@ -6,7 +6,7 @@ import { SelectedPage } from "@/lib/types/types";
 import { useState } from "react";
 
 export default function Home() {
-  const [selectedPage, setSelectedPage] = useState<SelectedPage>("hero");
+  const [selectedPage, setSelectedPage] = useState<SelectedPage>("home");
   return (
     <>
       <Navbar selectedPage={selectedPage} setSelectedPage={setSelectedPage} />

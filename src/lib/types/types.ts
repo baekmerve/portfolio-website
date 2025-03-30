@@ -1,4 +1,4 @@
-export type SelectedPage = "hero" | "resume" | "projects" | "contact";
+export type SelectedPage = 'home' | 'resume' | 'projects' | 'contact'
 
 export type Project = {
   id: number;

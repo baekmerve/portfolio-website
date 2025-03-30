@@ -12,39 +12,39 @@ const DotGroup = ({ selectedPage, setSelectedPage }:Props) => {
 
   const selectedStyles = `relative bg-cyan before:absolute before:w-6 before:h-6 before:rounded-full before:border-2 before:border-cyan before:left-[-50%] before:top-[-50%] `;
   return (
-    <div className="flex flex-col gap-6 fixed top-[60%] right-7 z-10 ">
+    <div className='flex flex-col gap-6 fixed top-[60%] right-7 z-10 '>
       <AnchorLink
         className={`${
-          selectedPage === "hero" ? selectedStyles : " bg-darkGrey"
+          selectedPage === 'home' ? selectedStyles : ' bg-darkGrey'
         } w-3 h-3 rounded-full`}
-        href="#hero"
-        onClick={() => setSelectedPage("hero")}
+        href='#home'
+        onClick={() => setSelectedPage('home')}
       />
 
       <AnchorLink
         className={`${
-          selectedPage === "resume" ? selectedStyles : " bg-darkGrey"
+          selectedPage === 'resume' ? selectedStyles : ' bg-darkGrey'
         } w-3 h-3 rounded-full`}
-        href="#resume"
-        onClick={() => setSelectedPage("resume")}
+        href='#resume'
+        onClick={() => setSelectedPage('resume')}
       />
       <AnchorLink
         className={`${
-          selectedPage === "projects" ? selectedStyles : " bg-darkGrey"
+          selectedPage === 'projects' ? selectedStyles : ' bg-darkGrey'
         } w-3 h-3 rounded-full`}
-        href="#projects"
-        onClick={() => setSelectedPage("projects")}
+        href='#projects'
+        onClick={() => setSelectedPage('projects')}
       />
 
       <AnchorLink
         className={`${
-          selectedPage === "contact" ? selectedStyles : " bg-darkGrey"
+          selectedPage === 'contact' ? selectedStyles : ' bg-darkGrey'
         } w-3 h-3 rounded-full`}
-        href="#contact"
-        onClick={() => setSelectedPage("contact")}
+        href='#contact'
+        onClick={() => setSelectedPage('contact')}
       />
     </div>
-  );
+  )
 };
 
 export default DotGroup;

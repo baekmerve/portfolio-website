@@ -12,7 +12,7 @@ function DesktopNavbar({ selectedPage, setSelectedPage }: Props) {
     <nav className="hidden md:flex items-center">
       <div className="flex gap-6 font-jost text-lg font-semibold">
         <NavLink
-          page="Hero"
+          page="Home"
           selectedPage={selectedPage}
           setSelectedPage={setSelectedPage}
         />

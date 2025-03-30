@@ -21,35 +21,35 @@ export default function Projects() {
 
   return (
     <motion.section
-      id="projects"
-      initial="hidden"
-      whileInView="visible"
+      id='projects'
+      initial='hidden'
+      whileInView='visible'
       viewport={{ once: false, amount: 0.5 }}
       transition={{ duration: 0.5 }}
       variants={fadeInLeft}
-      className="flex-col items-center justify-center lg:h-[100vh] pt-40 space-y-20"
+      className='flex-col items-center justify-center h-full py-40 space-y-20'
     >
-      <TextAnimation text="Showcasing My Works.." otherStyles="p-3" />
+      <TextAnimation text='Showcasing My Works..' otherStyles='p-3' />
 
-      <div className="flex flex-col gap-10 lg:flex-row ">
+      <div className='flex flex-col gap-10 lg:flex-row '>
         {/* Left Content Section (Project Details) */}
-        <div className="w-full lg:1/2 flex flex-col lg:justify-between order-2 lg:order-none">
-          <div className="flex flex-col gap-8 h-[50%]">
+        <div className='w-full lg:1/2 flex flex-col lg:justify-between order-2 lg:order-none'>
+          <div className='flex flex-col gap-8 h-[50%]'>
             {/* Project Number */}
-            <div className="text-6xl md:text-8xl text-center lg:text-start font-extrabold text-transparent text-outline mt-3">
+            <div className='text-6xl md:text-8xl text-center lg:text-start font-extrabold text-transparent text-outline mt-3'>
               {projectList[activeIndex].num}
             </div>
 
             {/* Project Title */}
-            <p className="text-2xl md:text-4xl text-center lg:text-start">
+            <p className='text-2xl md:text-4xl text-center lg:text-start'>
               {projectList[activeIndex].title}
             </p>
             {/* Project Description */}
-            <p className="dark:text-white/60 text-center lg:text-start lg:text-xl">
+            <p className='dark:text-white/60 text-center lg:text-start lg:text-xl'>
               {projectList[activeIndex].description}
             </p>
             {/* GitHub & Notion Buttons */}
-            <div className="flex justify-center lg:justify-start">
+            <div className='flex justify-center lg:justify-start'>
               <SocialMediaIcons
                 github={projectList[activeIndex].github}
                 notion={projectList[activeIndex].notion}
@@ -57,13 +57,13 @@ export default function Projects() {
               />
             </div>
             {/* Border */}
-            <hr className="border border-brown/50 dark:border-white/40 " />
+            <hr className='border border-brown/50 dark:border-white/40 ' />
             {/* Project Stack */}
-            <ul className="flex gap-4 justify-center lg:justify-start flex-wrap">
+            <ul className='flex gap-4 justify-center lg:justify-start flex-wrap'>
               {projectList[activeIndex].stack.map((item, index) => (
                 <li
                   key={index}
-                  className="text-sm lg:text-lg text-brown dark:text-muted-foreground rounded-full p-3 bg-brown/30 dark:bg-white/5 flex justify-center items-center"
+                  className='text-sm lg:text-lg text-brown dark:text-muted-foreground rounded-full p-3 bg-brown/30 dark:bg-white/5 flex justify-center items-center'
                 >
                   {item.name}
                 </li>
@@ -73,7 +73,7 @@ export default function Projects() {
         </div>
 
         {/* Right Section (Swiper for Images) */}
-        <div className="lg:w-1/2 flex items-center">
+        <div className='lg:w-1/2 flex items-center'>
           <Swiper
             centeredSlides={true}
             grabCursor={true}
@@ -87,14 +87,14 @@ export default function Projects() {
             {projectList.map((project, index) => (
               <SwiperSlide key={index}>
                 {/* Image */}
-                <div className="flex items-center justify-center">
+                <div className='flex items-center justify-center'>
                   <Image
                     src={`/images/${project.image}`}
                     //layout="responsive"
                     width={800} // Default width (not strictly applied with `layout="responsive"`)
                     height={600} // Default height
-                    alt="project image"
-                    className="object-cover max-w-[300px] md:max-w-[400px] lg:max-w-[500px] rounded-2xl"
+                    alt='project image'
+                    className='object-cover max-w-[300px] md:max-w-[400px] lg:max-w-[500px] rounded-2xl'
                   />
                 </div>
               </SwiperSlide>
@@ -103,5 +103,5 @@ export default function Projects() {
         </div>
       </div>
     </motion.section>
-  );
+  )
 }

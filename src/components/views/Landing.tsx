@@ -14,8 +14,8 @@ interface Props {
 }
 const Landing = ({ setSelectedPage, selectedPage }: Props) => {
   return (
-    <div className="w-5/6 mx-auto ">
-      <Section id="hero" setSelectedPage={setSelectedPage}>
+    <div className='w-5/6 mx-auto '>
+      <Section id='home' setSelectedPage={setSelectedPage}>
         <DotGroup
           selectedPage={selectedPage}
           setSelectedPage={setSelectedPage}
@@ -23,19 +23,19 @@ const Landing = ({ setSelectedPage, selectedPage }: Props) => {
         <Hero setSelectedPage={setSelectedPage} />
       </Section>
 
-      <Section id="resume" setSelectedPage={setSelectedPage}>
+      <Section id='resume' setSelectedPage={setSelectedPage}>
         <Resume />
       </Section>
 
-      <Section id="projects" setSelectedPage={setSelectedPage}>
+      <Section id='projects' setSelectedPage={setSelectedPage}>
         <Projects />
       </Section>
 
-      <Section id="contact" setSelectedPage={setSelectedPage}>
+      <Section id='contact' setSelectedPage={setSelectedPage}>
         <ContactPage />
       </Section>
     </div>
-  );
+  )
 };
 
 export default Landing;
