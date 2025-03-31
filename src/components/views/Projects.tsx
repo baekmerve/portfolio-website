@@ -1,23 +1,23 @@
-"use client";
-import { projectList } from "@/assets/data/data";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation, Autoplay, EffectCards } from "swiper/modules";
-import { useState } from "react";
-import TextAnimation from "../TextAnimation";
-import SocialMediaIcons from "../SocialMediaIcons";
+'use client'
+import { projectList } from '@/assets/data/data'
+import Image from 'next/image'
+import { motion } from 'framer-motion'
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination, Navigation, Autoplay, EffectCards } from 'swiper/modules'
+import { useState } from 'react'
+import TextAnimation from '../TextAnimation'
+import SocialMediaIcons from '../SocialMediaIcons'
 
 export default function Projects() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0)
 
   const fadeInLeft = {
     hidden: { opacity: 0, x: -50 },
     visible: { opacity: 1, x: 0 },
-  };
+  }
 
   return (
     <motion.section
@@ -27,7 +27,7 @@ export default function Projects() {
       viewport={{ once: false, amount: 0.5 }}
       transition={{ duration: 0.5 }}
       variants={fadeInLeft}
-      className='flex-col items-center justify-center h-full py-40 space-y-20'
+      className='min-h-screen space-y-20 '
     >
       <TextAnimation text='Showcasing My Works..' otherStyles='p-3' />
 
