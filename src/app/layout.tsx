@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/components/views/Footer";
 import Navbar from "@/components/navbar/Navbar";
 
+
 const jost = Jost({
   subsets: ["latin"],
   variable: "--font-jost-sans",
