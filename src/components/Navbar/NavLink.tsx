@@ -1,33 +1,17 @@
-import { SelectedPage } from "@/lib/types/types";
-import AnchorLink from "react-anchor-link-smooth-scroll";
+
+import Link from 'next/link'
 
 interface Props {
-  page: string;
-  selectedPage: SelectedPage;
-  setSelectedPage: (value: SelectedPage) => void;
+  title: string
+  path: string
 }
 
-const NavLink = ({ page, selectedPage, setSelectedPage }: Props) => {
-  // Convert the page to lowercase and remove spaces
-  const lowerCasePage = page.toLowerCase().replace(/ /g, "") as SelectedPage;
-  const commonButtonStyle = `text-center hover:scale-110 transition-all duration-100 rounded-full px-4 py-2  w-full h-full shadow-lg border bg-background/90 border border-brown/30 backdrop-blur-md`;
-
+const NavLink = ({ title, path }: Props) => {
   return (
-    <div
-      className={`${
-        selectedPage === lowerCasePage
-          ? "text-cyan font-bold scale-115 rounded-full border-2 border-cyan shadow-xl"
-          : " "
-      } ${commonButtonStyle}`}
-    >
-      <AnchorLink
-        href={`#${lowerCasePage}`}
-        onClick={() => setSelectedPage(lowerCasePage)}
-      >
-        {page}
-      </AnchorLink>
+    <div className=' text-center px-4 p-2 border rounded-full uppercase text-sm tracking-widest text-darkGrey dark:text-silver transition-all hover:border-darkCyan hover:text-darkCyan dark:hover:border-cyan/40 dark:hover:text-cyan/40 cursor-pointer '>
+      <Link href={path}>{title}</Link>
     </div>
-  );
-};
+  )
+}
 
-export default NavLink;
+export default NavLink

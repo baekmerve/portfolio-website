@@ -1,61 +1,55 @@
-import { SelectedPage } from '@/lib/types/types'
+'use client'
+
 import { motion } from 'framer-motion'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
+import BackgroundCircle from '../BackgroundCircle'
 
-import SocialMediaIcons from '../SocialMediaIcons'
+import Link from 'next/link'
+import { TypeAnimation } from 'react-type-animation'
 
-interface Props {
-  setSelectedPage: (value: SelectedPage) => void
-}
-
-const fadeInLeft = {
-  hidden: { opacity: 0, x: -50 },
-  visible: { opacity: 1, x: 0 },
-}
-
-const Hero = ({ setSelectedPage }: Props) => {
+export default function Hero() {
   return (
-    <section
-      id='home'
-      className='flex flex-col lg:flex-row lg:justify-between h-full py-40 gap-20'
-    >
-      {/* MAIN TEXT SECTION */}
-      <motion.div
-        initial='hidden'
-        whileInView='visible'
-        viewport={{ once: false, amount: 0.5 }}
-        transition={{ duration: 0.7 }}
-        variants={fadeInLeft}
-        className='lg:text-start text-center w-full h-fit space-y-10'
-      >
-        <p className='text-5xl lg:text-8xl font-caveat text-transparent bg-clip-text bg-gradient-to-r from-red to-cyan-400'>
-          MERVE BAEK
-        </p>
-        <p className='text-2xl lg:text-4xl text-cyan font-semibold mt-2'>
-          Jr. Frontend Developer
-        </p>
-        <p className='mt-6 lg:mt-8 text-lg lg:text-xl text-gray-600 dark:text-gray-300'>
-          Focused on building clean, responsive, and user-friendly websites.
-          Passionate about creating solutions that deliver results.
-        </p>
+    <div className='h-screen flex flex-col items-center justify-center text-center overflow-hidden'>
+      <BackgroundCircle />
 
-        {/* CONNECT BUTTON */}
-        <div className='mt-8 flex justify-center lg:justify-start gap-5'>
-          <AnchorLink
-            className='bg-cyan hover:bg-teal-600 text-white font-medium py-3 px-6 rounded-lg shadow-md transition-transform transform hover:scale-105 text-md'
-            onClick={() => setSelectedPage('contact')}
-            href='#contact'
+      <div className='z-10'>
+        <h1 className='font-bold text-3xl md:text-4xl lg:text-6xl text-darkCyan dark:text-cyan mb-6'>
+          Hello, I&apos;m Merve
+        </h1>
+        <h2 className='uppercase py-5 tracking-widest text-darkGrey text-xl md:text-2xl text-center font-semibold'>
+          jr. frontend developer
+        </h2>
+        <TypeAnimation
+          sequence={[
+            'who-loves-Coffee.tsx',
+            1000,
+            '<butLovesToCodeMore />',
+            1000,
+          ]}
+          wrapper='span'
+          speed={20}
+          repeat={Infinity}
+          className='text-darkGrey text-xl md:text-2xl font-semibold'
+        />
+
+        <div className='mt-10 z-20 flex justify-center gap-5'>
+          <motion.div
+            initial={{ opacity: 0, y: -500 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: 'spring',
+              stiffness: 100,
+              delay: 0.1,
+              damping: 30,
+            }}
           >
-            Let’s Connect
-          </AnchorLink>
-          <SocialMediaIcons
-            github={'https://github.com/baekmerve'}
-            notion={'https://www.notion.so/3fc2723651e6407fb971b8fdfd8fe2d6'}
-          />
+            <Link href='#contact'>
+              <button className='bg-darkCyan dark:bg-cyan  hover:bg-gradient-to-r from-darkCyan to-lime-200 dark:from-cyan text-brown font-medium py-3 px-7 rounded-lg shadow-md transform hover:scale-105 text-md cursor-pointer transition-all duration-300'>
+                Click Me
+              </button>
+            </Link>
+          </motion.div>
         </div>
-      </motion.div>
-    </section>
+      </div>
+    </div>
   )
 }
-
-export default Hero

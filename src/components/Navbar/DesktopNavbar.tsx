@@ -1,39 +1,21 @@
-import React from "react";
+import React from 'react'
+import NavLink from './NavLink'
+import { NavLinkType } from '@/lib/types/types'
 
-import { SelectedPage } from "@/lib/types/types";
-import NavLink from "./NavLink";
-
-interface Props {
-  selectedPage: SelectedPage;
-  setSelectedPage: (value: SelectedPage) => void;
-}
-function DesktopNavbar({ selectedPage, setSelectedPage }: Props) {
+function DesktopNavbar({ navLinks }: NavLinkType) {
   return (
-    <nav className="hidden md:flex items-center">
-      <div className="flex gap-6 font-jost text-lg font-semibold">
-        <NavLink
-          page="Home"
-          selectedPage={selectedPage}
-          setSelectedPage={setSelectedPage}
-        />
-        <NavLink
-          page="Resume"
-          selectedPage={selectedPage}
-          setSelectedPage={setSelectedPage}
-        />
-        <NavLink
-          page="Projects"
-          selectedPage={selectedPage}
-          setSelectedPage={setSelectedPage}
-        />
-        <NavLink
-          page="Contact"
-          selectedPage={selectedPage}
-          setSelectedPage={setSelectedPage}
-        />
+    <nav className='hidden menu md:flex md:w-auto items-center'>
+      <div className='flex gap-6 text-lg font-semibold '>
+        <ul className='flex p-4 md:p-0 md:flex-row gap-2 mt-0'>
+          {navLinks.map((link, index) => (
+            <li key={index}>
+              <NavLink title={link.title} path={link.path} />
+            </li>
+          ))}
+        </ul>
       </div>
     </nav>
-  );
+  )
 }
 
-export default DesktopNavbar;
+export default DesktopNavbar

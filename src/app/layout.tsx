@@ -3,6 +3,7 @@ import { Jost, Caveat } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/components/views/Footer";
+import Navbar from "@/components/navbar/Navbar";
 
 const jost = Jost({
   subsets: ["latin"],
@@ -31,6 +32,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={` ${caveat.variable} ${jost.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Navbar/>
           {children}
           <Footer />
         </ThemeProvider>

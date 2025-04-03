@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @plugin "tailwindcss-animate";
 
@@ -29,11 +29,15 @@
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
   --color-paper: var(--paper);
+
   --color-red: var(--red);
   --color-cyan: var(--cyan);
+  --color-darkCyan: var(--darkCyan);
+  --color-yellow: var(--yellow);
   --color-brightBlue: var(--brightBlue);
   --color-brown: var(--brown);
   --color-darkGrey: var(--darkGrey);
+  --color-silver: var(--silver);
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -66,20 +70,24 @@
   --accent-foreground: oklch(0.21 0.006 285.885);
 
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.92 0.004 286.32);
+  --border: rgb(175, 175, 175);
   --input: oklch(0.92 0.004 286.32);
   --ring: oklch(0.705 0.015 286.067);
 
   --paper: rgb(255, 249, 244);
   --red: rgb(220, 68, 146);
   --brightBlue: rgb(0, 123, 255);
-  --cyan: rgb(23, 195, 178);
-  --brown: rgb(62, 62, 62);
+
+  --yellow: rgb(247, 171, 10);
+  --brown: #3e3e3e;
   --darkGrey: rgb(117, 117, 117);
+  --silver: rgb(175, 175, 175);
+  --cyan: rgb(0, 255, 198);
+  --darkCyan: rgb(23, 195, 178);
 }
 
 .dark {
-  --background: rgb(28, 28, 34);
+  --background: rgb(36, 36, 36);
   --foreground: rgb(255, 249, 244);
 
   --card: oklch(0.21 0.006 285.885);
@@ -107,71 +115,34 @@
   --ring: oklch(0.552 0.016 285.938);
 }
 @layer base {
+  /* scroll-smooth */
   * {
     @apply border-border box-border outline-ring/50;
   }
 
   body {
-    @apply bg-background text-foreground leading-loose font-jost;
-  }
-
-  .text-outline {
-    -webkit-text-stroke: 3px var(--brown);
+    @apply bg-background text-foreground leading-loose font-jost w-5/6 mx-auto;
   }
 }
 
+@layer components {
+  .commonTitle {
+    @apply absolute top-24 uppercase tracking-[20px] text-darkGrey text-2xl text-center font-bold md:text-left;
+  }
+}
+
+/* Scrollbar width (horizontal & vertical) */
 ::-webkit-scrollbar {
-  width: 7px;
+  height: 7px; /* Controls horizontal scrollbar */
+  width: 7px; /* Controls vertical scrollbar */
 }
 
+/* Scrollbar Thumb (the draggable part) */
 ::-webkit-scrollbar-thumb {
-  @apply min-h-[400px] bg-cyan rounded-full;
+  @apply bg-cyan/50 rounded-full;
 }
 
+/* Scrollbar Track (the background) */
 ::-webkit-scrollbar-track {
-  @apply bg-primary/10 rounded-full;
-}
-
-/* colorChange animation */
-@keyframes colorChange {
-  0%,
-  100% {
-    background: #ff7eb3; /* Pink */
-    box-shadow: -15px 10px 20px rgba(255, 126, 179, 0.6);
-    transform: translate(0, 0);
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-  }
-
-  20% {
-    background: #b772f7; /* Purple */
-    box-shadow: 15px -10px 20px rgba(183, 114, 247, 0.6);
-    transform: translate(10px, -20px);
-    border-radius: 70% 30% 50% 50% / 60% 40% 40% 60%;
-  }
-
-  40% {
-    background: #ffcc00; /* Yellow */
-    box-shadow: -15px -10px 20px rgba(255, 204, 0, 0.6);
-    transform: translate(-20px, 15px);
-    border-radius: 50% 50% 40% 60% / 40% 50% 60% 50%;
-  }
-
-  60% {
-    background: #00ffff; /* Cyan */
-    box-shadow: 10px -15px 30px rgba(0, 255, 255, 0.7);
-    transform: translate(15px, 20px);
-    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
-  }
-
-  80% {
-    background: #f77272; /* Lime Green */
-    box-shadow: -15px -20px 25px rgba(247, 114, 114, 0.7);
-    transform: translate(-10px, 5px);
-    border-radius: 40% 60% 50% 50% / 50% 50% 60% 40%;
-  }
-}
-
-/* Apply the animation */
-.animate-colorChange {
-  animation: colorChange 15s infinite ease-in-out 1s;
+  @apply bg-background/30 rounded-full;
 }

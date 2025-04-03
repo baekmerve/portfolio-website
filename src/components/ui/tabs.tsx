@@ -40,14 +40,14 @@ function TabsTrigger({
 }: React.ComponentProps<typeof TabsPrimitive.Trigger>) {
   return (
     <TabsPrimitive.Trigger
-      data-slot="tabs-trigger"
+      data-slot='tabs-trigger'
       className={cn(
-        "inline-flex items-center w-full bg-brown/80 justify-center whitespace-nowrap text-white p-3 text-base font-medium ring-offset-white transition-all disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-cyan data-[state=active]:text-paper data-[state=active]:font-bold data-[state=active]:shadow-sm rounded-xl",
+        'inline-flex items-center w-full bg-brown/80 justify-center whitespace-nowrap text-white p-3 text-base font-medium ring-offset-white transition-all disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-yellow data-[state=active]:text-paper data-[state=active]:font-bold data-[state=active]:shadow-sm rounded-xl',
         className
       )}
       {...props}
     />
-  );
+  )
 }
 
 function TabsContent({

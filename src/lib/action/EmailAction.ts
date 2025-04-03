@@ -2,7 +2,7 @@
 "use server";
 
 import { Resend } from "resend";
-import { NewEmailTemplate } from "@/components/template/EmailTemplate";
+import { NewEmailTemplate } from "@/components/email/EmailTemplate";
 import { formSchema } from "../types/form-schema";
 import { DataState } from "../types/types";
 
