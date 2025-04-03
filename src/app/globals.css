@@ -48,7 +48,8 @@
 :root {
   --radius: 0.625rem;
 
-  --background: rgb(239, 235, 233);
+  /* --background: rgb(239, 235, 233); */
+    --background: oklch(1 0 0);
   --foreground: rgb(62, 62, 62);
 
   --card: oklch(1 0 0);
@@ -127,7 +128,7 @@
 
 @layer components {
   .commonTitle {
-    @apply absolute top-24 uppercase tracking-[20px] text-darkGrey text-2xl text-center font-bold md:text-left;
+    @apply absolute top-24 uppercase tracking-[20px] text-darkGrey text-3xl text-center font-bold md:text-left;
   }
 }
 
