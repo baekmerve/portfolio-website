@@ -3,7 +3,7 @@ import { Jost, Caveat } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/components/views/Footer";
-import Navbar from "@/components/navbar/Navbar";
+import Navbar from "@/components/navbarFolder/Navbar";
 
 
 const jost = Jost({
