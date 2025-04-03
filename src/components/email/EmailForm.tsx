@@ -1,25 +1,22 @@
-"use client";
-import { useActionState } from "react";
+'use client'
+import { useActionState } from 'react'
 
-import { Loader2 } from "lucide-react";
-import { DataState } from "@/lib/types/types";
+import { Loader2 } from 'lucide-react'
+import { DataState } from '@/lib/types/types'
 
-import { sendEmail } from "@/lib/action/EmailAction";
-import { Input } from "../ui/input";
-import { Textarea } from "../ui/textarea";
-import { Button } from "../ui/button";
+import { sendEmail } from '@/lib/action/EmailAction'
+import { Input } from '../ui/input'
+import { Textarea } from '../ui/textarea'
+import { Button } from '../ui/button'
 
 const initialState: DataState = {
-  failMessage: "",
-  successMessage: "",
+  failMessage: '',
+  successMessage: '',
   errors: {},
-};
+}
 
 export default function EmailForm() {
-  const [state, formAction, isPending] = useActionState(
-    sendEmail,
-    initialState
-  );
+  const [state, formAction, isPending] = useActionState(sendEmail, initialState)
 
   return (
     <form action={formAction} className='space-y-6'>
@@ -32,7 +29,7 @@ export default function EmailForm() {
           Name <span className='text-red-400 text-sm'>*</span>
         </label>
         <Input
-          className='w-full bg-transparent border-2 border-red rounded-lg p-3 hover:border hover:border-brightBlue h-14 transition '
+          className='w-full bg-transparent border-2 border-red rounded-lg p-3  hover:border-darkCyan  h-14 transition '
           type='text'
           name='sender'
           id='sender'
@@ -51,7 +48,7 @@ export default function EmailForm() {
           Email <span className='text-red-400 text-sm'>*</span>
         </label>
         <Input
-          className='w-full bg-transparent border-2 border-red rounded-lg p-3 hover:border hover:border-brightBlue h-14 transition'
+          className='w-full bg-transparent border-2 border-red rounded-lg p-3 hover:border-darkCyan  h-14 transition'
           type='email'
           name='email'
           id='email'
@@ -70,7 +67,7 @@ export default function EmailForm() {
           Message <span className='text-red-400 text-sm'>*</span>
         </label>
         <Textarea
-          className='w-full bg-transparent border-2 border-red rounded-lg p-3 hover:border hover:border-brightBlue transition h-32'
+          className='w-full bg-transparent border-2 border-red rounded-lg p-3 hover:border-darkCyan  transition h-32'
           name='content'
           id='content'
           placeholder='Enter your message'
