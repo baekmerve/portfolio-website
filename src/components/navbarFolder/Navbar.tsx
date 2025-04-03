@@ -26,7 +26,7 @@ const navLinks = [
 
 const Navbar = () => {
   return (
-    <nav className='sticky top-0 bg-background z-40 py-3 mx-auto w-full px-4 flex items-center justify-between '>
+    <nav className='sticky top-0 bg-background z-40 mt-3 py-3 mx-auto w-full px-4 flex items-center justify-between '>
       <motion.div
         initial={{
           x: -300,
