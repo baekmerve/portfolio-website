@@ -4,10 +4,6 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import EmailForm from '../email/EmailForm'
 
-const fadeInBottom = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0 },
-}
 export default function ContactPage() {
   return (
     <motion.div
@@ -18,7 +14,7 @@ export default function ContactPage() {
     >
       <h3 className='commonTitle'>Contact</h3>
 
-      <div className='flex flex-col gap-10 lg:flex-row lg:justify-between w-full justify-center '>
+      <div className=' flex flex-col items-center md:flex-row md:items-center md:justify-between w-full mt-32 md:mt-0'>
         {/* contact image */}
         <motion.div
           initial='hidden'
@@ -27,24 +23,21 @@ export default function ContactPage() {
             y: [0, 20, 0], // Moves up and down
             transition: { duration: 2, repeat: Infinity, repeatType: 'loop' }, // Infinite loop
           }}
-          className='basis-1/2 self-center relative  mt-10 lg:mt-0'
+          className='w-[150px] h-[150px] md:w-[300px] md:h-[300px] lg:w-[450px] lg:h-[450px] self-center relative '
         >
           <Image
             src='/images/contact-image.svg'
             alt='contact'
-            width={500}
-            height={500}
+            fill
             className='object-cover'
           />
         </motion.div>
         {/* email form*/}
         <motion.div
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: false, amount: 0.5 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          variants={fadeInBottom}
-          className='basis-1/2'
+          initial={{ y: 200, opacity: 0 }}
+          transition={{ duration: 1.2 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          className='w-[300px] md:w-1/2'
         >
           <EmailForm />
         </motion.div>

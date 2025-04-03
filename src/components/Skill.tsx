@@ -8,7 +8,7 @@ export default function Skill({ skill }: { skill: SkillType }) {
   return (
     <div className='group relative flex cursor-pointer'>
       <motion.div
-        initial={{ x: skill.directionLeft ? -200 : 200, opacity: 0 }}
+        initial={{ x: skill.directionLeft ? -100 : 100, opacity: 0 }}
         transition={{ duration: 1 }}
         whileInView={{ opacity: 1, x: 0 }}
         className='relative '
@@ -19,7 +19,7 @@ export default function Skill({ skill }: { skill: SkillType }) {
           alt={skill.name}
           width={20}
           height={20}
-          className=' w-20 h-20 md:w-28 md:h-28 rounded-full border border-gray-500 object-cover filter group-hover:grayscale transition duration-300 ease-in-out'
+          className=' w-16 h-16 md:w-28 md:h-28 rounded-full border border-gray-500 object-cover filter group-hover:grayscale transition duration-300 ease-in-out'
         />
         {/* Hover Overlay */}
         <div className='absolute top-0 left-0 opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out group-hover:bg-white h-20 w-20 md:w-28 md:h-28 rounded-full  z-10'>

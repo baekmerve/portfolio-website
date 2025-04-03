@@ -24,7 +24,7 @@ export default function EmailForm() {
   return (
     <form action={formAction} className='space-y-6'>
       {/* Name Field */}
-      <div>
+      <>
         <label
           htmlFor='sender'
           className='text-gray-700 dark:text-gray-300 font-medium'
@@ -41,9 +41,9 @@ export default function EmailForm() {
         {state?.errors?.sender && (
           <p className='text-red text-sm mt-1'>{state.errors.sender}</p>
         )}
-      </div>
+      </>
       {/* Email Field */}
-      <div>
+      <>
         <label
           htmlFor='email'
           className='text-gray-700 dark:text-gray-300 font-medium'
@@ -60,9 +60,9 @@ export default function EmailForm() {
         {state?.errors?.email && (
           <p className='text-red text-sm mt-1'>{state.errors.email}</p>
         )}
-      </div>
+      </>
       {/* Content Field */}
-      <div>
+      <>
         <label
           htmlFor='content'
           className='text-gray-700 dark:text-gray-300 font-medium'
@@ -78,7 +78,7 @@ export default function EmailForm() {
         {state?.errors?.content && (
           <p className='text-red text-sm mt-1'>{state.errors.content}</p>
         )}
-      </div>
+      </>
 
       {state?.successMessage ? (
         <p className='text-green-500'>{state.successMessage}</p>
@@ -90,7 +90,7 @@ export default function EmailForm() {
       <Button
         type='submit'
         disabled={isPending}
-        className='px-10 py-6 bg-darkGrey font-semibold rounded-xl  mt-5 hover:bg-red transition text-md duration-500 text-paper cursor-pointer'
+        className='px-10 py-6 bg-red font-semibold rounded-xl  mt-5 hover:bg-cyan hover:text-brown transition text-md duration-500 text-paper cursor-pointer'
       >
         {isPending ? (
           <>
