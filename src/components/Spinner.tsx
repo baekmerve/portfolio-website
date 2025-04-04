@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 const Spinner = () => {
   return (
-    <div className='fixed bottom-5 right-5 cursor-pointer z-30   '>
+    <div className='fixed bottom-16 right-5 cursor-pointer z-30   '>
       <Link
         href='#hero'
         aria-label='link for going to top of the page'
