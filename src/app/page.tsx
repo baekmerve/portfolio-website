@@ -4,7 +4,7 @@ import ContactPage from '@/components/views/ContactPage'
 import Hero from '@/components/views/Hero'
 
 import SkillSection from '@/components/views/SkillPage'
-import TestProjects from '@/components/views/ProjectsPage'
+import ProjectsPage from '@/components/views/ProjectsPage'
 
 export default function Home() {
   return (
@@ -22,7 +22,7 @@ export default function Home() {
       </section>
 
       <section id='projects' className='snap-start'>
-        <TestProjects />
+        <ProjectsPage />
       </section>
 
       <section id='contact' className='snap-start'>

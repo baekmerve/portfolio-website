@@ -8,7 +8,7 @@ export type Project = {
   description: string
   github: string
   notion: string
-  demo?: string
+  demo?: string | null
   stack: ProjectStack[]
 }
 

@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion'
 import { projectList } from '@/lib/data'
 
-import TestProjectCard from '../ProjectCard'
+import ProjectCard from '../ProjectCard'
 
 export default function ProjectsPage() {
   return (
@@ -15,14 +15,16 @@ export default function ProjectsPage() {
       <h3 className='commonTitle'>projects</h3>
 
       <div className='w-full h-fit relative flex space-x-5 overflow-x-scroll overflow-y-hidden z-20 snap-x snap-mandatory'>
-        {projectList.map((project, index) => (
-          <div
-            key={index}
-            className=' flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center'
-          >
-            <TestProjectCard key={index} project={project} />
-          </div>
-        ))}
+        {projectList.map((project, index) =>
+          project ? (
+            <div
+              key={index}
+              className='flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center'
+            >
+              <ProjectCard key={index} project={project} />
+            </div>
+          ) : null
+        )}
       </div>
       {/* Background Effect */}
       <div className='w-full absolute top-[30%] dark:bg-cyan/5 bg-brown/20 left-0 h-[500px] -skew-y-12' />

@@ -40,7 +40,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           <SocialMediaIcons
             github={project.github}
             notion={project.notion}
-            demo={project.demo}
+            demo={project.demo!}
             otherSyle='border-brown'
           />
         </div>

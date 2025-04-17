@@ -1,5 +1,29 @@
 export const projectList = [
   {
+    id: 6,
+    tag: ['All', 'Web'],
+    image: 'bookLibrary.svg',
+    title: 'Book Library',
+    description:
+      'BookLibrary는 책을 검색하고 대여하거나 반납할 수 있으며, 장르나 작가를 기반으로 유사한 책들을 추천받을 수 있는 직관적인 웹 애플리케이션입니다. 깔끔한 검색 기능과 상세한 도서 페이지를 통해 원하는 책을 손쉽게 찾고, 자신의 독서 활동을 효율적으로 관리할 수 있습니다.',
+
+    github: 'https://github.com/baekmerve/Book-Library',
+    notion:
+      'https://common-letter-b5e.notion.site/BookLibrary-1b4944a64b3280728c12cf671c8d8693?pvs=4',
+    demo: 'https://book-library-silk-seven.vercel.app',
+    stack: [
+      { name: 'Next.js' },
+      { name: 'TypeScript' },
+      { name: 'Tailwind.css' },
+      { name: 'Shadcn' },
+      { name: 'Neon' },
+      { name: 'Drizzle' },
+      { name: 'Upstash' },
+      { name: 'ImageKit' },
+    ],
+  },
+  ,
+  {
     id: 1,
     tag: ['All', 'Web'],
     image: 'socialApp.svg',
