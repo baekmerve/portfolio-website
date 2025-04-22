@@ -14,7 +14,7 @@ export default function ContactPage() {
     >
       <h3 className='commonTitle'>Contact</h3>
 
-      <div className=' flex flex-col items-center md:flex-row md:items-center md:justify-between w-full mt-32 md:mt-0'>
+      <div className=' flex flex-col items-center md:flex-row md:items-center md:justify-between w-full  md:mt-0'>
         {/* contact image */}
         <motion.div
           initial='hidden'

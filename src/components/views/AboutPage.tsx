@@ -18,7 +18,7 @@ const AboutPage = () => {
         transition={{ duration: 1.2 }}
         whileInView={{ x: 0, opacity: 1 }}
         viewport={{ once: true }}
-        className='mt-10 md:mt-28 relative w-full max-w-[600px] aspect-[16/9]'
+        className=' relative w-full max-w-[600px] aspect-[16/9]'
       >
         <Image
           alt='Profile image of Merve Baek, junior frontend developer'

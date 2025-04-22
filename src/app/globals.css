@@ -125,10 +125,10 @@
     @apply bg-background text-foreground leading-loose font-jost w-5/6 mx-auto;
   }
 }
-
+/* absolute top-24 */
 @layer components {
   .commonTitle {
-    @apply absolute top-24 uppercase tracking-[20px] text-darkGrey text-3xl text-center font-bold md:text-left;
+    @apply  uppercase tracking-[20px] text-darkGrey text-3xl text-center font-bold md:text-left;
   }
 }
 

@@ -10,11 +10,13 @@ export default function ProjectsPage() {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className='h-screen relative flex flex-col md:flex-row overflow-hidden justify-evenly items-center max-w-full mx-auto z-0 '
+      className='min-h-screen relative flex flex-col space-y-10 overflow-hidden justify-evenly items-center max-w-full mx-auto z-0 '
     >
-      <h3 className='commonTitle'>projects</h3>
+      <h3 className='uppercase tracking-[20px] text-darkGrey text-3xl text-center font-bold md:text-left'>
+        projects
+      </h3>
 
-      <div className='w-full h-fit relative flex space-x-5 overflow-x-scroll overflow-y-hidden z-20 snap-x snap-mandatory'>
+      <div className='w-full h-fit relative flex space-x-5 overflow-x-scroll overflow-y-hidden z-20 snap-x snap-mandatory '>
         {projectList.map((project, index) =>
           project ? (
             <div
@@ -27,7 +29,7 @@ export default function ProjectsPage() {
         )}
       </div>
       {/* Background Effect */}
-      <div className='w-full absolute top-[30%] dark:bg-cyan/5 bg-brown/20 left-0 h-[500px] -skew-y-12' />
+      <div className='w-full absolute top-[30%] dark:bg-cyan/5 bg-brown/20 left-0 h-[500px] -skew-y-12 ' />
     </motion.div>
   )
 }
