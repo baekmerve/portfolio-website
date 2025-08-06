@@ -1,32 +1,44 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-"use server";
+'use server'
 
-import { Resend } from "resend";
-import { NewEmailTemplate } from "@/components/email/EmailTemplate";
-import { formSchema } from "../types/form-schema";
-import { DataState } from "../types/types";
+import { Resend } from 'resend'
+import { NewEmailTemplate } from '@/components/email/EmailTemplate'
+import { formSchema } from '../types/form-schema'
+import { DataState } from '../types/types'
 
 export async function sendEmail(
   _prevState: DataState,
   formData: FormData
 ): Promise<DataState> {
-  const resend = new Resend(process.env.RESEND_API_KEY);
-  const sender = formData.get("sender") as string;
-  const email = formData.get("email") as string;
-  const content = formData.get("content") as string;
+  const resend = new Resend(process.env.RESEND_API_KEY)
+  const sender = formData.get('sender') as string
+  const email = formData.get('email') as string
+  const content = formData.get('content') as string
+  const nickname = formData.get('nickname') as string
 
-  try {
-    const validatedFields = formSchema.safeParse({ sender, email, content });
-
-    if (!validatedFields.success) {
-      return {
-        failMessage: "Validation failed",
-        successMessage: "",
-        errors: validatedFields.error.flatten().fieldErrors,
-      };
+  // 🛡️ Honeypot check - fpr spam mails
+  if (nickname && nickname.trim() !== '') {
+    return {
+      failMessage: 'Spam detected.',
+      successMessage: '',
+      errors: {},
     }
+  }
 
-    const { data, error } = await resend.emails.send({
+  // ✅ Validate fields
+  const validatedFields = formSchema.safeParse({ sender, email, content })
+
+  if (!validatedFields.success) {
+    return {
+      failMessage: 'Validation failed',
+      successMessage: '',
+      errors: validatedFields.error.flatten().fieldErrors,
+    }
+  }
+
+  // 📤 Send the email
+  try {
+    const { error } = await resend.emails.send({
       from: process.env.FROM_EMAIL as string,
       to: process.env.TO_EMAIL as string,
       subject: `Message from portfolio Website - ${email}`,
@@ -35,26 +47,26 @@ export async function sendEmail(
         email,
         content,
       }) as React.ReactElement,
-    });
+    })
 
     if (error) {
       return {
-        failMessage: "Failed to send email",
-        successMessage: "",
+        failMessage: 'Failed to send email',
+        successMessage: '',
         errors: {},
-      };
+      }
     }
 
     return {
-      successMessage: "Email sent successfully",
-      failMessage: "",
+      successMessage: 'Email sent successfully',
+      failMessage: '',
       errors: {},
-    };
+    }
   } catch (error) {
     return {
-      failMessage: "Oops! Something went wrong. Please try again.",
-      successMessage: "",
+      failMessage: 'Oops! Something went wrong. Please try again.',
+      successMessage: '',
       errors: {},
-    };
+    }
   }
 }

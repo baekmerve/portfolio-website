@@ -1,9 +1,7 @@
 'use client'
 import { useActionState } from 'react'
-
 import { Loader2 } from 'lucide-react'
 import { DataState } from '@/lib/types/types'
-
 import { sendEmail } from '@/lib/action/EmailAction'
 import { Input } from '../ui/input'
 import { Textarea } from '../ui/textarea'
@@ -20,8 +18,15 @@ export default function EmailForm() {
 
   return (
     <form action={formAction} className='space-y-6'>
-      {/* Name Field */}
       <>
+        <input
+          type='text'
+          name='nickname'
+          tabIndex={-1}
+          autoComplete='off'
+          className='hidden'
+        />
+        {/* Name Field */}
         <label
           htmlFor='sender'
           className='text-gray-700 dark:text-gray-300 font-medium'
